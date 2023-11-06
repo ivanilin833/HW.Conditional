@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class WebConfig {
-    @ConditionalOnProperty(name = "netology.profile.dev", havingValue = "true")
+    @ConditionalOnProperty(name = "netology.profile.dev", matchIfMissing = true, havingValue = "true")
     @Bean
     public SystemProfile devProfile() {
         return new DevProfile();
